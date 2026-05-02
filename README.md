@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=3000&pause=1000&color=2A9D8F&center=true&vCenter=true&width=600&lines=Pandas+%7C+NumPy+%7C+Matplotlib;Final+Term+Data+Analysis+Project;Spring+2026" alt="Typing SVG" />
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=3000&pause=1000&color=E76F51&center=true&vCenter=true&width=600&lines=Pandas+%7C+NumPy+%7C+Matplotlib;Final+Term+Data+Analysis+Project;Spring+2026+%7C+Section+C" alt="Typing SVG" />
 
 <br/>
 
@@ -14,11 +14,11 @@
 
 <br/>
 
-[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
-[![NumPy](https://img.shields.io/badge/NumPy-Computation-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org)
-[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=for-the-badge)](https://matplotlib.org)
-[![Colab](https://img.shields.io/badge/Google%20Colab-Notebook-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com)
+[![Python](https://img.shields.io/badge/Python-3.x-264653?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-2A9D8F?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
+[![NumPy](https://img.shields.io/badge/NumPy-Computation-E9C46A?style=for-the-badge&logo=numpy&logoColor=black)](https://numpy.org)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-F4A261?style=for-the-badge&logoColor=white)](https://matplotlib.org)
+[![Open in Colab](https://img.shields.io/badge/Open%20in%20Colab-Run%20Notebook-E76F51?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com/drive/1Qe8xC0US4XB6G7C5JO_5GOPuCpCvIllw?usp=sharing)
 
 <br/>
 
@@ -228,14 +228,14 @@ Step 12  ┃  Write final conclusion
 ---
 
 ### Figure 3 — Average Bike Rentals by Weather Condition
-> Dry weather dominates. Rainy and snowy conditions suppress demand by up to 80%.
+> Dry weather dominates. Rainy and snowy conditions show much lower average demand compared with dry weather.
 
 ![Average Bike Rentals by Weather Condition](images/chart6WeatherConditionDemand.png)
 
 ---
 
 ### Figure 4 — Correlation with Rented Bike Count
-> Temperature is the strongest individual positive predictor. Humidity has the strongest negative relationship.
+> Temperature has the strongest positive relationship among the original weather variables. Humidity has the strongest negative relationship.
 
 ![Correlation with Rented Bike Count](images/chartWeatherCorrelation.png)
 
@@ -298,7 +298,7 @@ This project demonstrates that **Seoul bike rental demand is strongly shaped by 
 - 📈 Demand is **highest in Summer**, peaks at **18:00**, and is strongest during **dry weather**
 - 🚇 The dual-peak pattern (08:00 and 18:00) confirms **commuter behavior** as the primary use case
 - ❄️ Winter, rain, and holidays **significantly suppress** rental demand
-- 🔴 All 63 extreme outlier hours share the same profile: **Summer · 18:00 · Dry · Non-Holiday · Weekday**
+- 🔴 Many of the highest demand records appear around dry, non-holiday, weekday evening periods, especially during warmer seasons
 
 These findings can help bike sharing operators **allocate bikes more effectively** during high-demand periods and reduce waste during predictably low-demand conditions.
 
@@ -329,8 +329,9 @@ These findings can help bike sharing operators **allocate bikes more effectively
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-![GitHub last commit](https://img.shields.io/badge/Submission-Spring%202026-2A9D8F?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Complete-success?style=flat-square)
+![GitHub last commit](https://img.shields.io/badge/Submission-Spring%202026-E76F51?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Complete-2A9D8F?style=flat-square)
 ![Analysis](https://img.shields.io/badge/Analysis-8%2C760%20Records-264653?style=flat-square)
+![Colab](https://img.shields.io/badge/Notebook-Open%20in%20Colab-F4A261?style=flat-square&logo=googlecolab&logoColor=white)
 
 </div>
