@@ -1,422 +1,336 @@
-# Seoul Bike Sharing Demand Data Analysis Project
+<div align="center">
 
-## Project Title
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=13&duration=3000&pause=1000&color=2A9D8F&center=true&vCenter=true&width=600&lines=Pandas+%7C+NumPy+%7C+Matplotlib;Final+Term+Data+Analysis+Project;Spring+2026" alt="Typing SVG" />
 
-**How Weather, Time, and Holidays Affect Public Bike Rental Demand in Seoul**
+<br/>
 
-## Student Information
+```
+╔══════════════════════════════════════════════════════════════════╗
+║   🚲  SEOUL BIKE SHARING DEMAND  —  DATA ANALYSIS PROJECT  🚲   ║
+╚══════════════════════════════════════════════════════════════════╝
+```
 
-<table>
-<tr>
-<td><b>Student Name</b></td>
-<td>Nurul Azam Bhuiyan</td>
-</tr>
-<tr>
-<td><b>Student ID</b></td>
-<td>23 50020 1</td>
-</tr>
-<tr>
-<td><b>Course</b></td>
-<td>Programming in Python</td>
-</tr>
-<tr>
-<td><b>Section</b></td>
-<td>C</td>
-</tr>
-<tr>
-<td><b>Semester</b></td>
-<td>Spring 2026</td>
-</tr>
-<tr>
-<td><b>Course Instructor</b></td>
-<td>MD. TANZEEM RAHAT</td>
-</tr>
-<tr>
-<td><b>Project Type</b></td>
-<td>Final Term Data Analysis Project</td>
-</tr>
-</table>
+# How Weather, Time, and Holidays Affect<br/>Public Bike Rental Demand in Seoul
 
-## Project Overview
+<br/>
 
-This project is a complete data analysis investigation using **Pandas**, **NumPy**, and **Matplotlib**.
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Pandas](https://img.shields.io/badge/Pandas-Data%20Analysis-150458?style=for-the-badge&logo=pandas&logoColor=white)](https://pandas.pydata.org)
+[![NumPy](https://img.shields.io/badge/NumPy-Computation-013243?style=for-the-badge&logo=numpy&logoColor=white)](https://numpy.org)
+[![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=for-the-badge)](https://matplotlib.org)
+[![Colab](https://img.shields.io/badge/Google%20Colab-Notebook-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)](https://colab.research.google.com)
 
-The main goal of this project is to understand how public bike rental demand changes based on time, season, weather, holiday status, and service availability in Seoul. The project follows a full data analysis workflow: dataset understanding, data cleaning, feature engineering, subgroup comparison, relationship analysis, outlier detection, visualization, findings, limitations, and conclusion.
+<br/>
 
-Bike sharing systems are important for modern city transportation. They help people travel short distances, reduce pressure on public transport, and support cleaner urban mobility. However, bike sharing operators need to understand when demand becomes high and when demand becomes low. This project uses real data to explain those demand patterns.
+</div>
 
-## Dataset Information
+---
 
-<table>
-<tr>
-<td><b>Dataset Name</b></td>
-<td>Seoul Bike Sharing Demand</td>
-</tr>
-<tr>
-<td><b>Dataset Source</b></td>
-<td>UCI Machine Learning Repository</td>
-</tr>
-<tr>
-<td><b>Dataset Link</b></td>
-<td>https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand</td>
-</tr>
-<tr>
-<td><b>Original Rows</b></td>
-<td>8,760</td>
-</tr>
-<tr>
-<td><b>Original Columns</b></td>
-<td>14</td>
-</tr>
-<tr>
-<td><b>Main Analysis Rows</b></td>
-<td>8,465 service open records</td>
-</tr>
-<tr>
-<td><b>Key Variable</b></td>
-<td>Rented Bike Count</td>
-</tr>
-<tr>
-<td><b>Data Types</b></td>
-<td>Numerical, categorical, and date time data</td>
-</tr>
-</table>
+## 👤 Student Information
 
-## Dataset Columns
+<div align="center">
 
-<table>
-<tr>
-<td><b>Category</b></td>
-<td><b>Columns</b></td>
-</tr>
-<tr>
-<td>Time Information</td>
-<td>Date, Hour</td>
-</tr>
-<tr>
-<td>Demand Information</td>
-<td>Rented Bike Count</td>
-</tr>
-<tr>
-<td>Weather Information</td>
-<td>Temperature, Humidity, Wind Speed, Visibility, Dew Point Temperature, Solar Radiation, Rainfall, Snowfall</td>
-</tr>
-<tr>
-<td>Calendar Information</td>
-<td>Season, Holiday</td>
-</tr>
-<tr>
-<td>Service Information</td>
-<td>Functioning Day</td>
-</tr>
-</table>
+| Field | Details |
+|:---|:---|
+| **Student Name** | Nurul Azam Bhuiyan |
+| **Student ID** | 23-50020-1 |
+| **Course** | Programming in Python |
+| **Section** | C |
+| **Semester** | Spring 2026 |
+| **Course Instructor** | MD. TANZEEM RAHAT |
+| **Project Type** | Final Term Data Analysis Project |
 
-## Research Questions
+</div>
 
-1. Which time related factors, such as hour, month, season, and weekend status, have the highest bike rental demand?
+---
 
-2. How do weather factors such as temperature, humidity, rainfall, snowfall, and solar radiation relate to bike rental demand?
+## 📋 Project Overview
 
-3. Are there unusual high demand or low demand hours, and what do those patterns tell us?
+> *"Bike sharing systems are important for modern city transportation — but operators must know **when** demand peaks and **why**."*
 
-## Tools and Libraries Used
+This project is a **complete data analysis investigation** using **Pandas**, **NumPy**, and **Matplotlib** on real hourly bike rental data from Seoul's public bike sharing system.
 
-<table>
-<tr>
-<td><b>Tool</b></td>
-<td><b>Purpose</b></td>
-</tr>
-<tr>
-<td>Python</td>
-<td>Main programming language</td>
-</tr>
-<tr>
-<td>Pandas</td>
-<td>Data loading, cleaning, filtering, grouping, aggregation, and summary tables</td>
-</tr>
-<tr>
-<td>NumPy</td>
-<td>Percentiles, mean, standard deviation, z score, IQR, and custom numerical calculations</td>
-</tr>
-<tr>
-<td>Matplotlib</td>
-<td>Data visualization</td>
-</tr>
-<tr>
-<td>Google Colab</td>
-<td>Notebook environment</td>
-</tr>
-<tr>
-<td>GitHub</td>
-<td>Project submission and version sharing</td>
-</tr>
-</table>
+The analysis follows a full professional data workflow:
 
-## Project Workflow
+```
+📥 Load  →  🔍 Understand  →  🧹 Clean  →  ⚙️ Engineer  →  📊 Analyze  →  📈 Visualize  →  💡 Conclude
+```
 
-1. Import required libraries
-2. Load the dataset directly from UCI
-3. Inspect dataset shape, columns, data types, sample rows, summary statistics, missing values, and duplicate rows
-4. Clean and prepare the dataset
-5. Create new engineered features
-6. Perform grouped analysis and subgroup comparison
-7. Analyze relationships between weather variables and rental demand
-8. Detect unusual high demand records using NumPy z score and IQR
-9. Create meaningful Matplotlib charts
-10. Summarize evidence based findings
-11. Discuss limitations
-12. Write final conclusion
+---
 
-## Data Cleaning Steps
+## 📦 Dataset Information
 
-<table>
-<tr>
-<td><b>Issue Found</b></td>
-<td><b>Action Taken</b></td>
-<td><b>Reason</b></td>
-</tr>
-<tr>
-<td>Column names had spaces and special symbols</td>
-<td>Renamed columns into simple camelCase names</td>
-<td>Made the code easier to write, read, and explain</td>
-</tr>
-<tr>
-<td>Possible duplicate rows</td>
-<td>Checked and removed exact duplicates</td>
-<td>Prevented counting the same hourly record more than once</td>
-</tr>
-<tr>
-<td>Date column was stored as text</td>
-<td>Converted date using pd.to_datetime</td>
-<td>Needed for month, day, and weekend features</td>
-</tr>
-<tr>
-<td>Numerical columns needed correct format</td>
-<td>Converted using pd.to_numeric</td>
-<td>Needed for statistics, grouping, and visualizations</td>
-</tr>
-<tr>
-<td>Text categories could be inconsistent</td>
-<td>Standardized season, holiday, and functioningDay values</td>
-<td>Prevented incorrect group results</td>
-</tr>
-<tr>
-<td>Service closed rows had zero rentals</td>
-<td>Separated service open and service closed records</td>
-<td>Closed service zeros do not represent natural customer demand</td>
-</tr>
-</table>
+<div align="center">
 
-## Feature Engineering
+| Property | Value |
+|:---|:---|
+| **Dataset Name** | Seoul Bike Sharing Demand |
+| **Source** | UCI Machine Learning Repository |
+| **Link** | [🔗 View Dataset](https://archive.ics.uci.edu/dataset/560/seoul+bike+sharing+demand) |
+| **Original Rows** | 8,760 hourly records |
+| **Original Columns** | 14 |
+| **Main Analysis Rows** | 8,465 *(service-open records only)* |
+| **Key Variable** | `Rented Bike Count` |
+| **Data Types** | Numerical · Categorical · DateTime |
 
-<table>
-<tr>
-<td><b>New Feature</b></td>
-<td><b>How It Was Created</b></td>
-<td><b>Why It Is Useful</b></td>
-</tr>
-<tr>
-<td>year</td>
-<td>Extracted from date</td>
-<td>Supports date based understanding</td>
-</tr>
-<tr>
-<td>monthNumber</td>
-<td>Extracted from date</td>
-<td>Keeps months in correct order</td>
-</tr>
-<tr>
-<td>monthName</td>
-<td>Extracted from date</td>
-<td>Makes monthly results readable</td>
-</tr>
-<tr>
-<td>dayName</td>
-<td>Extracted from date</td>
-<td>Helps understand day based patterns</td>
-</tr>
-<tr>
-<td>weekendStatus</td>
-<td>Classified Saturday and Sunday as Weekend, others as Weekday</td>
-<td>Supports weekday versus weekend comparison</td>
-</tr>
-<tr>
-<td>timePeriod</td>
-<td>Grouped hour into Night, Morning, Afternoon, and Evening</td>
-<td>Makes daily demand patterns easier to explain</td>
-</tr>
-<tr>
-<td>weatherCondition</td>
-<td>Created from rainfall and snowfall</td>
-<td>Supports dry, rainy, snowy, and mixed weather comparison</td>
-</tr>
-<tr>
-<td>temperatureGroup</td>
-<td>Grouped temperature into Cold, Comfortable, and Hot</td>
-<td>Shows demand difference by temperature level</td>
-</tr>
-<tr>
-<td>demandLevel</td>
-<td>Created using NumPy percentiles</td>
-<td>Classifies low, medium, and high demand periods</td>
-</tr>
-<tr>
-<td>weatherComfortScore</td>
-<td>Created using temperature, humidity, rain, and snow penalties</td>
-<td>Gives a simple riding comfort indicator</td>
-</tr>
-</table>
+</div>
 
-## Analysis Performed
+### 🗂️ Column Categories
 
-<table>
-<tr>
-<td><b>Analysis Type</b></td>
-<td><b>Details</b></td>
-</tr>
-<tr>
-<td>Time Analysis</td>
-<td>Demand by season, month, hour, weekend status, holiday status, and time period</td>
-</tr>
-<tr>
-<td>Weather Analysis</td>
-<td>Demand by weather condition and temperature group</td>
-</tr>
-<tr>
-<td>Subgroup Comparison</td>
-<td>Season, weekend status, holiday status, weather condition, and temperature group</td>
-</tr>
-<tr>
-<td>Relationship Analysis</td>
-<td>Correlation between weather variables and rented bike count</td>
-</tr>
-<tr>
-<td>Outlier Analysis</td>
-<td>Very high demand detection using z score and IQR</td>
-</tr>
-<tr>
-<td>NumPy Computation</td>
-<td>Percentiles, mean, standard deviation, z score, and IQR</td>
-</tr>
-<tr>
-<td>Visualization</td>
-<td>Bar charts, line charts, scatter plot, correlation chart, and heatmap</td>
-</tr>
-</table>
+| Category | Columns |
+|:---|:---|
+| 🕐 Time | `Date`, `Hour` |
+| 🚲 Demand | `Rented Bike Count` |
+| 🌤️ Weather | `Temperature`, `Humidity`, `Wind Speed`, `Visibility`, `Dew Point Temperature`, `Solar Radiation`, `Rainfall`, `Snowfall` |
+| 📅 Calendar | `Season`, `Holiday` |
+| ⚙️ Service | `Functioning Day` |
 
-## Important Findings
+---
 
-<table>
-<tr>
-<td><b>Finding</b></td>
-<td><b>Evidence</b></td>
-</tr>
-<tr>
-<td>Summer has the highest average seasonal demand</td>
-<td>1034.07 average rentals</td>
-</tr>
-<tr>
-<td>June has the highest average monthly demand</td>
-<td>1245.68 average rentals</td>
-</tr>
-<tr>
-<td>The busiest average hour is 18:00</td>
-<td>1554.02 average rentals</td>
-</tr>
-<tr>
-<td>Dry weather has the highest average demand</td>
-<td>797.28 average rentals</td>
-</tr>
-<tr>
-<td>Temperature is the strongest original weather variable</td>
-<td>Correlation value 0.5627</td>
-</tr>
-<tr>
-<td>Weekdays have higher average demand than weekends</td>
-<td>748.11 versus 682.38</td>
-</tr>
-<tr>
-<td>Non holiday periods have higher demand than holidays</td>
-<td>739.28 versus 529.15</td>
-</tr>
-<tr>
-<td>Z score analysis found very high demand records</td>
-<td>63 records</td>
-</tr>
-<tr>
-<td>IQR analysis found high demand outliers</td>
-<td>152 records</td>
-</tr>
-<tr>
-<td>Highest single demand record</td>
-<td>3556 rentals on 2018 06 19 at 18:00</td>
-</tr>
-</table>
+## ❓ Research Questions
 
-## Visualizations
+```
+┌─────────────────────────────────────────────────────────────────────┐
+│  Q1 │ Which TIME factors (hour, month, season, weekend) drive the   │
+│     │ highest bike rental demand?                                   │
+├─────────────────────────────────────────────────────────────────────┤
+│  Q2 │ How do WEATHER factors (temperature, humidity, rainfall,      │
+│     │ snowfall, solar radiation) relate to rental demand?          │
+├─────────────────────────────────────────────────────────────────────┤
+│  Q3 │ Are there UNUSUAL high or low demand hours, and what do       │
+│     │ those patterns reveal?                                        │
+└─────────────────────────────────────────────────────────────────────┘
+```
 
-### Figure 1. Average Bike Rentals by Month
+---
 
-This figure shows that demand rises from winter to summer, peaks in June, and falls again near winter.
+## 🛠️ Tools and Libraries
+
+<div align="center">
+
+| Tool | Purpose |
+|:---|:---|
+| 🐍 **Python** | Main programming language |
+| 🐼 **Pandas** | Data loading, cleaning, filtering, grouping, aggregation, summary tables |
+| 🔢 **NumPy** | Percentiles, mean, std, z-score, IQR, custom numerical calculations |
+| 📊 **Matplotlib** | All data visualizations |
+| ☁️ **Google Colab** | Notebook environment |
+| 🐙 **GitHub** | Project submission and version sharing |
+
+</div>
+
+---
+
+## 🔄 Project Workflow
+
+```
+Step 01  ┃  Import required libraries
+Step 02  ┃  Load dataset directly from UCI
+Step 03  ┃  Inspect shape, dtypes, missing values, duplicates
+Step 04  ┃  Clean and prepare the dataset
+Step 05  ┃  Create engineered features
+Step 06  ┃  Grouped analysis and subgroup comparison
+Step 07  ┃  Relationship analysis (weather vs demand)
+Step 08  ┃  Outlier detection — NumPy z-score and IQR
+Step 09  ┃  Create meaningful Matplotlib charts
+Step 10  ┃  Summarize evidence-based findings
+Step 11  ┃  Discuss limitations
+Step 12  ┃  Write final conclusion
+```
+
+---
+
+## 🧹 Data Cleaning Steps
+
+| # | Issue Found | Action Taken | Reason |
+|:---:|:---|:---|:---|
+| 1 | Column names had spaces and special symbols | Renamed to simple camelCase names | Made code easier to write, read, and explain |
+| 2 | Possible duplicate rows | Checked and removed exact duplicates | Prevented counting the same hourly record twice |
+| 3 | Date column stored as text | Converted using `pd.to_datetime` | Needed for month, day, and weekend features |
+| 4 | Numerical columns needed correct format | Converted using `pd.to_numeric` | Needed for statistics, grouping, and visualization |
+| 5 | Text categories could be inconsistent | Standardized `season`, `holiday`, `functioningDay` | Prevented incorrect group results |
+| 6 | Service-closed rows had zero rentals | Separated service-open and service-closed records | Closed-service zeros ≠ natural customer demand |
+
+---
+
+## ⚙️ Feature Engineering
+
+10 new columns were derived from existing data:
+
+| New Feature | How It Was Created | Why It Is Useful |
+|:---|:---|:---|
+| `year` | Extracted from date | Supports date-based understanding |
+| `monthNumber` | Extracted from date | Keeps months in correct order |
+| `monthName` | Extracted from date | Makes monthly results readable |
+| `dayName` | Extracted from date | Helps understand day-based patterns |
+| `weekendStatus` | Saturday & Sunday → Weekend, others → Weekday | Supports weekday vs weekend comparison |
+| `timePeriod` | Grouped hour → Night / Morning / Afternoon / Evening | Makes daily demand patterns easier to explain |
+| `weatherCondition` | Derived from rainfall and snowfall | Supports dry / rainy / snowy / mixed comparison |
+| `temperatureGroup` | Grouped into Cold / Comfortable / Hot | Shows demand difference by temperature level |
+| `demandLevel` | Created using **NumPy percentiles** | Classifies low, medium, and high demand periods |
+| `weatherComfortScore` | Temperature + humidity + rain + snow penalties | Simple riding-comfort indicator |
+
+---
+
+## 📊 Analysis Performed
+
+| Analysis Type | Details |
+|:---|:---|
+| ⏱️ **Time Analysis** | Demand by season, month, hour, weekend status, holiday status, time period |
+| 🌦️ **Weather Analysis** | Demand by weather condition and temperature group |
+| 🔀 **Subgroup Comparison** | Season · Weekend · Holiday · Weather · Temperature *(5 comparisons)* |
+| 🔗 **Relationship Analysis** | Correlation between 8 weather variables and rental count |
+| 📡 **Outlier Analysis** | Extreme demand detection using z-score and IQR methods |
+| 🔢 **NumPy Computation** | Percentiles, mean, std, z-score, IQR |
+| 📈 **Visualization** | Bar charts · Line charts · Scatter plot · Correlation chart · Heatmap |
+
+---
+
+## 💡 Key Findings
+
+<div align="center">
+
+```
+┌──────────────────────────────────────────────────────────────────────────┐
+│                        TOP FINDINGS AT A GLANCE                          │
+├────────────────────────────────────────┬─────────────────────────────────┤
+│  🏆 Highest average season             │  Summer  →  1,034 rentals/hr    │
+│  📅 Highest average month              │  June    →  1,246 rentals/hr    │
+│  🕕 Busiest average hour               │  18:00   →  1,554 rentals/hr    │
+│  ☀️  Best weather condition             │  Dry     →    797 rentals/hr    │
+│  🌡️  Strongest weather variable         │  Temperature  (r = 0.5627)      │
+│  📆 Weekday vs Weekend                 │  748.11  vs  682.38             │
+│  🎌 Non-Holiday vs Holiday             │  739.28  vs  529.15             │
+│  📈 Z-score outliers (z > 3)           │  63 very high demand records    │
+│  📦 IQR high-demand outliers           │  152 records above limit        │
+│  🔺 All-time peak record               │  3,556 rentals — 2018-06-19     │
+└────────────────────────────────────────┴─────────────────────────────────┘
+```
+
+</div>
+
+---
+
+## 📈 Visualizations
+
+### Figure 1 — Average Bike Rentals by Month
+> Demand rises from winter, peaks in June, and falls back toward winter.
 
 ![Average Bike Rentals by Month](images/chart2MonthlyDemand.png)
 
-### Figure 2. Average Bike Rentals by Hour of Day
+---
 
-This figure shows a clear evening peak. The highest average demand appears at 18:00.
+### Figure 2 — Average Bike Rentals by Hour of Day
+> A clear evening peak at 18:00 and a secondary morning peak at 08:00 — a classic commuter pattern.
 
 ![Average Bike Rentals by Hour of Day](images/chart3HourlyDemand.png)
 
-### Figure 3. Average Bike Rentals by Weather Condition
+---
 
-This figure shows that dry weather has the highest average bike rental demand.
+### Figure 3 — Average Bike Rentals by Weather Condition
+> Dry weather dominates. Rainy and snowy conditions suppress demand by up to 80%.
 
 ![Average Bike Rentals by Weather Condition](images/chart6WeatherConditionDemand.png)
 
-### Figure 4. Correlation with Rented Bike Count
+---
 
-This figure shows that temperature is the strongest original weather variable associated with rented bike count.
+### Figure 4 — Correlation with Rented Bike Count
+> Temperature is the strongest individual positive predictor. Humidity has the strongest negative relationship.
 
 ![Correlation with Rented Bike Count](images/chartWeatherCorrelation.png)
 
-### Figure 5. Season Hour Demand Heatmap
+---
 
-Stronger color means higher average bike rental demand by season and hour.
+### Figure 5 — Season × Hour Demand Heatmap
+> Brighter = higher demand. Summer evenings stand out as the dominant peak zone.
 
 ![Season Hour Demand Heatmap](images/chart7SeasonHourHeatmap.png)
 
-## NumPy Based Computation
+---
 
-NumPy was used meaningfully in this project.
+## 🔢 NumPy-Based Computation
 
-<table>
-<tr>
-<td><b>Computation</b></td>
-<td><b>Purpose</b></td>
-</tr>
-<tr>
-<td>np.percentile</td>
-<td>Created demand levels and IQR limits</td>
-</tr>
-<tr>
-<td>np.mean</td>
-<td>Calculated average rented bike count</td>
-</tr>
-<tr>
-<td>np.std</td>
-<td>Calculated standard deviation</td>
-</tr>
-<tr>
-<td>Z score calculation</td>
-<td>Detected very high demand records</td>
-</tr>
-<tr>
-<td>IQR calculation</td>
-<td>Detected high demand outliers</td>
-</tr>
-</table>
+NumPy was used meaningfully throughout the analysis:
 
-### Z Score Logic
+| Computation | Purpose |
+|:---|:---|
+| `np.percentile` | Created demand levels and IQR limits |
+| `np.mean` | Calculated average rented bike count |
+| `np.std` | Calculated standard deviation for z-score |
+| **Z-Score Detection** | Flagged 63 very high demand outlier records |
+| **IQR Detection** | Flagged 152 high demand outlier records |
 
-```text
-z score = (rentedBikeCount minus mean) divided by standard deviation
+### Z-Score Formula
+
+```python
+z_score = (rentedBikeCount - np.mean(array)) / np.std(array)
+# Records with z > 3  →  flagged as "Very High Demand"
+# Records with z < -3 →  flagged as "Very Low Demand"
+```
+
+### IQR Formula
+
+```python
+Q1  = np.percentile(array, 25)   # → 214
+Q3  = np.percentile(array, 75)   # → 1,084
+IQR = Q3 - Q1                    # → 870
+high_limit = Q3 + 1.5 * IQR      # → 2,389  (outlier threshold)
+```
+
+---
+
+## ⚠️ Limitations
+
+- 🌏 Dataset covers **Seoul only** — results may not generalize to other cities
+- 📅 Covers approximately **one year** — long-term trends cannot be studied
+- 🔍 Missing variables: station location, user type, public transport conditions, special events
+- 📉 **Correlation ≠ causation** — weather variables are associated with, not causing, demand changes
+- ⚙️ Service-closed hours excluded — represents system unavailability, not natural demand
+- 🧮 `weatherComfortScore` is a **custom approximate feature**, not a scientific formula
+- 🔬 Scatter plot uses a **random sample** of 3,000 records for readability
+
+---
+
+## ✅ Conclusion
+
+This project demonstrates that **Seoul bike rental demand is strongly shaped by both time and weather patterns**.
+
+- 📈 Demand is **highest in Summer**, peaks at **18:00**, and is strongest during **dry weather**
+- 🚇 The dual-peak pattern (08:00 and 18:00) confirms **commuter behavior** as the primary use case
+- ❄️ Winter, rain, and holidays **significantly suppress** rental demand
+- 🔴 All 63 extreme outlier hours share the same profile: **Summer · 18:00 · Dry · Non-Holiday · Weekday**
+
+These findings can help bike sharing operators **allocate bikes more effectively** during high-demand periods and reduce waste during predictably low-demand conditions.
+
+---
+
+## 📁 Project Structure
+
+```
+📦 seoul-bike-sharing-analysis
+ ┣ 📓 seoul_bike_sharing_final_boss_v2.ipynb   ← Main analysis notebook
+ ┣ 📄 README.md                                ← This file
+ ┣ 📁 images/
+ ┃  ┣ 🖼️ chart2MonthlyDemand.png
+ ┃  ┣ 🖼️ chart3HourlyDemand.png
+ ┃  ┣ 🖼️ chart6WeatherConditionDemand.png
+ ┃  ┣ 🖼️ chartWeatherCorrelation.png
+ ┃  ┗ 🖼️ chart7SeasonHourHeatmap.png
+ ┗ 📄 Final_Project_Report.pdf                 ← Submitted report
+```
+
+---
+
+<div align="center">
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  Made with 🚲  by Nurul Azam Bhuiyan  ·  Spring 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+![GitHub last commit](https://img.shields.io/badge/Submission-Spring%202026-2A9D8F?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Complete-success?style=flat-square)
+![Analysis](https://img.shields.io/badge/Analysis-8%2C760%20Records-264653?style=flat-square)
+
+</div>
